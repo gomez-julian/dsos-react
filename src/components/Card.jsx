@@ -4,7 +4,7 @@ import "../bootstrap.min.css";
 
 function Card(props) {
   const [Number, setNumber] = React.useState(0);
-	const [flag, setFlag] = React.useState(true);
+	const [flag, setFlag] = React.useState(false);
 	const [value, setValue] = React.useState({
 		flag: true,
 		number: 0
@@ -13,6 +13,13 @@ function Card(props) {
     setNumber(Number + 1)
   }
   const {text, icon, pic, user} = props
+  React.useEffect(() => {
+    if(flag){
+      document.getElementById('title').textContent = `Le diste Like a la publicación de ${user}`
+    }else {
+      setFlag(true)
+    }
+  });
   return (
     <div className="Instagram-card my-2">
       <div className="Instagram-card-header">

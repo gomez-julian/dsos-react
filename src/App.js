@@ -3,6 +3,7 @@ import './feed.css';
 import './bootstrap.min.css'
 import { Picture } from './components/Picture.jsx';
 import { Card } from './components/Card.jsx';
+import { Form } from './components/Form.jsx';
 import picture from './images/Megumi.png';
 import picture2 from './images/Chigusa.jpg';
 import picture3 from './images/Icon3.jpg';
@@ -21,6 +22,8 @@ function App() {
   const d = "Pero ya vieron el delineado de mi flaca 🛐🛐🛐 sos re lindo"
   return (
       <div>
+      <Form />
+      <p>⏲ <span id="title">Empieza a interactuar para obtener cambios</span> </p>
       <div className="d-flex h-100">
       <Picture srca={ picture } />
       <Picture srca={ picture2 } />
