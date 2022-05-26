@@ -41,7 +41,13 @@ const handlerChange = (event) => {
     // array.data.push(data)
     // array.references.push(data.referenceID)
     // console.log(array.data)
-    setData({...data, todos: [...data.todos, data]})
+    const a = {
+      referenceID : data.referenceID,
+      monto : data.monto,
+      card : data.card,
+    }
+    setData({...a, todos: [...data.todos, data]})
+    console.log(data)
   }
 
   return (
@@ -81,7 +87,7 @@ const handlerChange = (event) => {
       </button>
     </form>
     <div>
-      {array.data.map((element) => {
+      {data.todos.map((element) => {
         const {referenceID, monto, card} = element
         return <Store referenceID={referenceID} monto={monto} card={card}/>
       })}
